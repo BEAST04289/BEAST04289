@@ -1,16 +1,16 @@
-## Hi there 👋
+### Hi there, I'm Shaurya! 👋
+**1st Year CSE @ MUJ | Winter of Code Mentor**
 
-<!--
-**BEAST04289/BEAST04289** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I learn by shipping production code. Currently bridging **AI Agents** and **Web3**.
 
-Here are some ideas to get you started:
+#### 🚀 What I'm Building
+* 🛡️ **[SHIELD](https://github.com/BEAST04289/SHIELD):** Multimodal AI Scam Detector (Microsoft Imagine Cup '26)
+* 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio):** Verifiable Crypto Sentiment Agent (Story Protocol)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+#### 🛠️ My Stack
+`Python` `C++` `Azure OpenAI` `Solana` `FastAPI` `Docker`
+
+#### 🌱 Current Focus
+Mastering **Data Structures & Algorithms** (C++) and **System Design**.
+
+[LinkedIn](https://www.linkedin.com/in/shaurya--upadhyay/) • [Email](mailto:shaurya04289@gmail.com)
