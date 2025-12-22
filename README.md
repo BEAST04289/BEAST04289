@@ -1,7 +1,7 @@
 ### Hi there, I'm Shaurya! 👋
 **1st Year CSE @ MUJ | Winter of Code Mentor**
 
-I learn by shipping production code. Currently bridging **AI Agents** and **Web3**.
+I learn by shipping production code. Currently bridging **Agentic AI** and **Real-World Solutions**.
 
 #### 🚀 What I'm Building
 * 🛡️ **[SHIELD](https://github.com/BEAST04289/SHIELD):** Multimodal AI Scam Detector (Microsoft Imagine Cup '26)
