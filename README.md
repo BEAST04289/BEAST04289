@@ -5,7 +5,7 @@ I learn by shipping production code. Currently bridging **Agentic AI** and **Rea
 
 #### 🚀 What I'm Building
 * 🛡️ **[SHIELD](https://github.com/BEAST04289/SHIELD):** Multimodal AI Scam Detector (Microsoft Imagine Cup '26)
-* 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio):** Verifiable Crypto Sentiment Agent (Story Protocol)
+* 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio):** Verifiable Crypto Sentiment Agent (Story Protocol & Solana)
 
 #### 🛠️ My Stack
 `Python` `C++` `Azure OpenAI` `Solana` `FastAPI` `Docker`
