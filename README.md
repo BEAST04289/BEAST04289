@@ -18,7 +18,7 @@ I learn by shipping code that actually works. Currently bridging **Agentic AI** 
 
 ## 🏆 Achievements
 
-- 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+** teams
+- 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+** teams in 1st round
 - 🏅 **Smart India Hackathon** — Internal Round Winner (450+ teams)
 - 🎓 **Google AI Agents Intensive** — Completed Capstone
 - ☁️ **Google Cloud Skill Badges** — 25+ certifications
