@@ -1,5 +1,5 @@
 ### Hi there, I'm Shaurya! 👋
-**1st Year CSE @ MUJ | Winter of Code Mentor**
+**1st Year CSE @ MUJ**
 
 I learn by shipping production code. Currently bridging **Agentic AI** and **Real-World Solutions**.
 
