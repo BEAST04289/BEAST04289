@@ -10,6 +10,7 @@ I learn by shipping code that actually works. Currently bridging **Agentic AI** 
 
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
+| 🧠 **[Q.E.D.](https://github.com/BEAST04289/Q.E.D.)** | AI Physics Engine: Reverse-engineers physics from video | Gemini 3, Manim, FastAPI, Next.js | 🏆 Gemini Hackathon |
 | 🛡️ **[Sentinel](https://github.com/BEAST04289/Sentinel)** | Autonomous Financial Risk Agent with RAG | LangGraph, FastAPI, ChromaDB, FAISS | ✅ Live |
 | 🛡️ **[SHIELD](https://github.com/BEAST04289/ImagineCup)** | Multimodal AI Scam Detector | Azure AI, GPT-4o, Streamlit | 🏆 Imagine Cup '26 |
 | 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Story Protocol, RoBERTa, FastAPI | ✅ Live |
@@ -34,6 +35,8 @@ I learn by shipping code that actually works. Currently bridging **Agentic AI** 
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=flat&logo=google&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
 
 ---
 
