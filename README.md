@@ -1,8 +1,8 @@
 # Hi there, I'm Shaurya! 👋
 
-**1st Year CSE @ MUJ** | Building Production AI Systems
+**1st Year CSE @ MUJ** | Building Computational Reality
 
-I learn by shipping code that actually works. Currently bridging **Agentic AI** and **Real-World Solutions**.
+I don't just build chatbots; I build autonomous systems that reason, act, and simulate reality. Currently bridging **Scientific Discovery** and **Agentic AI**.
 
 ---
 
@@ -10,44 +10,49 @@ I learn by shipping code that actually works. Currently bridging **Agentic AI** 
 
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
-| 🧠 **[Q.E.D.](https://github.com/BEAST04289/Q.E.D.)** | AI Physics Engine: Reverse-engineers physics from video | Gemini 3, Manim, FastAPI, Next.js | 🏆 Gemini Hackathon |
-| 🛡️ **[Sentinel](https://github.com/BEAST04289/Sentinel)** | Autonomous Financial Risk Agent with RAG | LangGraph, FastAPI, ChromaDB, FAISS | ✅ Live |
+| 🧪 **[Q.E.D.](https://github.com/BEAST04289/Q.E.D.)** | Autonomous Physics Simulator & Discovery Agent | Gemini 3, Manim, Docker, Next.js | 🚧 **Building** |
+| 🛡️ **[Sentinel](https://github.com/BEAST04289/Sentinel)** | Autonomous Financial Risk Agent with RAG | LangGraph, FastAPI, ChromaDB | ✅ Live |
 | 🛡️ **[SHIELD](https://github.com/BEAST04289/ImagineCup)** | Multimodal AI Scam Detector | Azure AI, GPT-4o, Streamlit | 🏆 Imagine Cup '26 |
-| 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Story Protocol, RoBERTa, FastAPI | ✅ Live |
+| 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Story Protocol, RoBERTa | ✅ Live |
 
 ---
 
-## 🏆 Achievements
+## 🏆 Recent Wins (Jan 2026)
 
-- 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+** teams in 1st round
-- 🏅 **Smart India Hackathon** — Internal Round Winner (450+ teams)
-- 🎓 **Google AI Agents Intensive** — Completed Capstone
+- 🌟 **Selected for WikiTech Cohort 2** — "Road to Wiki" Open Source Program (Top <1% applicants)
+- 🚀 **Top 500 Global** — Unstop One-Day Internship Challenge (Qualified for R2)
+- 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+**
+- 🏅 **Smart India Hackathon** — Internal Round Winner
 - ☁️ **Google Cloud Skill Badges** — 25+ certifications
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ The Arsenal
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+**Core AI & Agents**
+![Gemini 3](https://img.shields.io/badge/Gemini%203-8E75B2?style=flat&logo=googlebard&logoColor=white)
 ![LangGraph](https://img.shields.io/badge/LangGraph-orange?style=flat)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=flat&logo=google&logoColor=white)
+![Azure AI](https://img.shields.io/badge/Azure%20AI-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+
+**Full Stack & Systems**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Manim](https://img.shields.io/badge/Manim-Physics-success?style=flat&logo=python)
 
 ---
 
 ## 🌱 Current Focus
 
-- Mastering **DSA in C++** for competitive programming
-- Building **Agentic AI** systems that solve real problems
+- **Project Q.E.D.** — Teaching AI to "see" physics in raw video and simulate it.
+- **Deep Think Models** — Experimenting with reasoning chains in Gemini 3.
+- **Competitive Programming** — Mastering C++ DSA.
 
 ---
 
-## 📫 Let's Connect
+## 📫 Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaurya--upadhyay/)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:shaurya04289@gmail.com)
