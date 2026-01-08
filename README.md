@@ -20,7 +20,6 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 ## 🏆 Recent Wins (Jan 2026)
 
 - 🌟 **Selected for WikiTech Cohort 2** — "Road to Wiki" Open Source Program (Top <1% applicants)
-- 🚀 **Top 500 Global** — Unstop One-Day Internship Challenge (Qualified for R2)
 - 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+**
 - 🏅 **Smart India Hackathon** — Internal Round Winner
 - ☁️ **Google Cloud Skill Badges** — 25+ certifications
