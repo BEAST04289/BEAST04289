@@ -10,15 +10,16 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
-| 🧪 **[Q.E.D.](https://github.com/BEAST04289/Q.E.D.)** | Autonomous Physics Simulator & Discovery Agent | Gemini 3, Manim, Docker, Next.js | 🚧 **Building** |
+| 🔬 **[VERITAS.AI](https://github.com/BEAST04289/VERITAS.AI)** | Physics-Based Deepfake Reality Engine | Gemini 2.0, Manim, SciPy | 🚧 **Building (Gemini 3)** |
+| 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Solana, Story Protocol, RoBERTa | 🏆 **Winner ($450 Prize)** |
 | 🛡️ **[Sentinel](https://github.com/BEAST04289/Sentinel)** | Autonomous Financial Risk Agent with RAG | LangGraph, FastAPI, ChromaDB | ✅ Live |
 | 🛡️ **[SHIELD](https://github.com/BEAST04289/ImagineCup)** | Multimodal AI Scam Detector | Azure AI, GPT-4o, Streamlit | 🏆 Imagine Cup '26 |
-| 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Story Protocol, RoBERTa | ✅ Live |
 
 ---
 
 ## 🏆 Recent Wins (Jan 2026)
 
+- 🏆 **Winner, 100x Solana Hackathon** — Top 10/232 & $450 Prize (Jan 2026)
 - 🌟 **Selected for WikiTech Cohort 2** — "Road to Wiki" Open Source Program (Top <1% applicants)
 - 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+**
 - 🏅 **Smart India Hackathon** — Internal Round Winner
@@ -33,6 +34,7 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 ![LangGraph](https://img.shields.io/badge/LangGraph-orange?style=flat)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
 ![Azure AI](https://img.shields.io/badge/Azure%20AI-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
 
 **Full Stack & Systems**
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
@@ -45,7 +47,7 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 
 ## 🌱 Current Focus
 
-- **Project Q.E.D.** — Teaching AI to "see" physics in raw video and simulate it.
+- **Project VERITAS** — Teaching AI to "see" physics in raw video and simulate it.
 - **Deep Think Models** — Experimenting with reasoning chains in Gemini 3.
 - **Competitive Programming** — Mastering C++ DSA.
 
