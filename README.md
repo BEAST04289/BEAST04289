@@ -18,7 +18,7 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 ---
 
 ## 🏆 Recent Wins (Jan 2026)
-
+- 🌟 **Solana Foundation Audit Subsidy (2026):** Selected for the Security Subsidy Program ($5,000 allocation) to audit smart contracts.
 - 🏆 **Winner, 100x Solana Hackathon** — Top 10/232 & $450 Prize (Jan 2026)
 - 🌟 **Selected for WikiTech Cohort 2** — "Road to Wiki" Open Source Program (Top <1% applicants)
 - 🥇 **Synaptix AI Hackathon** (IIT Madras Shaastra 2026) — Rank **14/2200+**
