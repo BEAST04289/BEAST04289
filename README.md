@@ -10,7 +10,7 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
-| 🔬 **[VERITAS.AI](https://github.com/BEAST04289/VERITAS.AI)** | Physics-Based Deepfake Reality Engine | Gemini 2.0, Manim, SciPy |  **Building (Gemini 3)** |
+| 🔬 **[VERITAS.AI](https://github.com/BEAST04289/VERITAS.AI)** | Physics-Based Deepfake Reality Engine | Gemini 3.0, Manim, SciPy |  **Building (Gemini 3)** |
 | 📈 **[SENTIENT110](https://github.com/BEAST04289/Sentinent110)** | AI Financial Sentiment Analysis | Claude 3.5 Haiku, Story Protocol |  **FAIL.exe 2026** |
 | 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Solana, Story Protocol, RoBERTa | 🏆 **Winner ($450 Prize)** |
 | 🛡️ **[Sentinel](https://github.com/BEAST04289/Sentinel)** | Autonomous Financial Risk Agent with RAG | LangGraph, FastAPI, ChromaDB | ✅ Live |
