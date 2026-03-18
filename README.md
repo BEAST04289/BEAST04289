@@ -14,7 +14,7 @@ I don't just build chatbots; I build autonomous systems that reason, act, and si
 | 📈 **[SENTIENT110](https://github.com/BEAST04289/Sentinent110)** | AI Financial Sentiment Analysis | Claude 3.5 Haiku, Story Protocol |  **FAIL.exe 2026** |
 | 🤖 **[DugTrio](https://github.com/BEAST04289/DugTrio)** | Verifiable Crypto Sentiment Agent | Solana, Story Protocol, RoBERTa | 🏆 **Winner ($450 Prize)** |
 | 🛡️ **[Sentinel](https://github.com/BEAST04289/Sentinel)** | Autonomous Financial Risk Agent with RAG | LangGraph, FastAPI, ChromaDB | ✅ Live |
-| 🛡️ **[SHIELD](https://github.com/BEAST04289/ImagineCup)** | Multimodal AI Scam Detector | Azure AI, GPT-4o, Streamlit |  Imagine Cup '26 |
+| 🛡️ **[SHIELD](https://github.com/BEAST04289/AWS_AI-FOR-BHARAT)** | Multimodal AI Scam Detector | Azure AI, GPT-4o, Streamlit |  Imagine Cup '26 |
 
 ---
 
