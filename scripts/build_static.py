@@ -37,8 +37,8 @@ TYPED = [
     "top 25 · TigerGraph × Hacker House Goa 2026",
     "$5,000 Solana Foundation grantee · OWASP contributor",
 ]
-# availability pill: (tag, lead-in, roles in the gradient) + a quiet education chip next to it
-STATUS = ("AVAILABLE", "Open to ", "AI/ML, SWE & SDE roles")
+# availability pill: (lead-in, roles in the gradient) + a quiet education chip next to it
+STATUS = ("Open to ", "AI/ML, SWE & SDE roles")
 EDU_CHIP = "B.Tech CSE · MUJ '29"
 
 # 4 x 3 wall; every row uses four different accents for its numbers.
@@ -301,11 +301,10 @@ def build_hero() -> Svg:
           f'repeatCount="indefinite" keyTimes="{kt}" values="{xs}"/></rect></g></g>')
 
     # availability pill: a light sweeps along its hairline border; the roles carry the gradient
-    tag, lead, roles = STATUS
+    lead, roles = STATUS
     fs2 = 15.5
-    tag_w = text_width(tag, "m7", 11, 2)
     lead_w, roles_w = text_width(lead, "d5", fs2), text_width(roles, "d7", fs2)
-    pill_w = 18 + 9 + 12 + tag_w + 12 + 1 + 13 + lead_w + roles_w + 20
+    pill_w = 22 + lead_w + roles_w + 22
     edu_w = 40 + text_width(EDU_CHIP, "m5", 14) + 18
     gapc, py2, ph2 = 14, 352, 38
     x = cx - (pill_w + gapc + edu_w) / 2
@@ -323,14 +322,7 @@ def build_hero() -> Svg:
           f'stroke="{EDGE_HI}"/>'
           f'<rect x="{x + .5:.1f}" y="{py2 + .5}" width="{pill_w - 1:.1f}" height="{ph2 - 1}" rx="{(ph2 - 1) / 2}" '
           f'stroke="url(#{sheen})" stroke-width="1.2"/>')
-    dx = x + 22
-    s.add(f'<circle cx="{dx:.1f}" cy="{mid}" r="4.5" fill="{GREEN}"/>'
-          f'<circle class="ping" cx="{dx:.1f}" cy="{mid}" r="4.5" fill="{GREEN}"/>')
-    tx2 = x + 39
-    s.add(s.text(tx2, mid + 4, tag, "m7", 11, GREEN, ls=2))
-    sx = tx2 + tag_w + 12
-    s.add(f'<line x1="{sx:.1f}" y1="{mid - 8}" x2="{sx:.1f}" y2="{mid + 8}" stroke="#3a3a3a"/>')
-    lx = sx + 14
+    lx = x + 22
     s.add(s.text(lx, mid + 5.5, lead, "d5", fs2, SOFT))
     rg = word_grad(s, lx + lead_w, lx + lead_w + roles_w)
     s.add(s.text(lx + lead_w, mid + 5.5, roles, "d7", fs2, f"url(#{rg})"))
