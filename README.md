@@ -9,6 +9,7 @@
 
 <img src="assets/hero.svg" width="100%" alt="Shaurya Upadhyay — AI Engineer · RAG · AI Agents · Software Engineering"/>
 
+<a href="https://beast04289.github.io"><img src="assets/buttons/portfolio.svg" height="46" alt="Portfolio — beast04289.github.io"/></a>&nbsp;
 <a href="https://www.linkedin.com/in/shaurya--upadhyay/"><img src="assets/buttons/linkedin.svg" height="46" alt="LinkedIn"/></a>&nbsp;
 <a href="mailto:shaurya04289@gmail.com"><img src="assets/buttons/email.svg" height="46" alt="Email"/></a>&nbsp;
 <a href="https://t.me/BEAST04289"><img src="assets/buttons/telegram.svg" height="46" alt="Telegram"/></a>

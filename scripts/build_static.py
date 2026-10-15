@@ -133,7 +133,8 @@ STACK = [
                                  ("Google Cloud", "googlecloud", "4285F4"), ("Linux", "linux", "FCC624")]),
 ]
 
-BUTTONS = [("linkedin", "LinkedIn", "linkedin@13.21.0", "0A66C2"),
+BUTTONS = [("portfolio", "Portfolio", "@globe", "EDEDED"),
+           ("linkedin", "LinkedIn", "linkedin@13.21.0", "0A66C2"),
            ("email", "Email", "gmail", "EA4335"),
            ("telegram", "Telegram", "telegram", "26A5E4")]
 
