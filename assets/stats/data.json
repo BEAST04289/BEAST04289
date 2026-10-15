@@ -11,34 +11,34 @@
   "items": [
    [
     "Python",
-    67.84
+    66.31
    ],
    [
     "TypeScript",
-    13.4
+    14.04
    ],
    [
     "HTML",
-    7.37
+    7.72
    ],
    [
     "C++",
-    4.86
+    5.09
    ],
    [
     "JavaScript",
-    4.28
+    4.49
    ],
    [
     "CSS",
-    2.21
+    2.32
    ],
    [
     "C",
-    0.03
+    0.04
    ]
   ],
-  "repos": 22
+  "repos": 21
  },
  "search": {
   "prs": 15,
@@ -49,7 +49,7 @@
    "AugustyaSingh/Radish",
    "OWASP/OpenCRE"
   ],
-  "commits": 378
+  "commits": 379
  },
  "calendar": {
   "days": {
@@ -715,5 +715,5 @@
    "restricted": 0
   }
  },
- "updated": "2026-10-15T10:18:24+00:00"
+ "updated": "2026-10-15T12:20:45+00:00"
 }
