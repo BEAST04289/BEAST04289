@@ -44,6 +44,10 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           SETTING_JSON: .github/profile-3d.json
 
+      - name: Frame the 3D calendar like the other cards
+        continue-on-error: true
+        run: python3 scripts/github_stats.py --frame-3d profile-3d-contrib/profile-aurora.svg
+
       - name: Commit refreshed cards
         run: |
           git config user.name "github-actions[bot]"

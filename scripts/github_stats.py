@@ -20,6 +20,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -77,7 +78,7 @@ class Fetcher:
         share: dict[str, float] = {}
         counted = 0
         for r in repos:
-            if r.get("fork"):
+            if r.get("fork") or r["name"].lower() == self.user.lower():  # skip forks and this profile repo
                 continue
             langs = {k: v for k, v in self.rest(f"/repos/{r['full_name']}/languages").items() if k not in NOISE_LANGS}
             total = sum(langs.values())
@@ -445,15 +446,41 @@ def _smooth(pts: list[tuple[float, float]], floor: float) -> str:
     return d
 
 
+def frame_3d(src: Path, dst: Path) -> None:
+    """Wrap the github-profile-3d-contrib SVG in the same rounded, bordered panel as the other cards."""
+    inner = re.sub(r"<\?xml[^>]*\?>", "", src.read_text(encoding="utf-8")).strip()
+    root = re.match(r"<svg\b[^>]*>", inner).group(0)
+    vb = re.search(r'viewBox="([\d.\s-]+)"', root)
+    w0, h0 = (float(v) for v in vb.group(1).split()[2:]) if vb else (1280.0, 850.0)
+    W, x, w = 1200, 10, 1180
+    h = w * h0 / w0
+    sized = re.sub(r'\s(?:width|height|x|y)="[^"]*"', "", root)
+    sized = sized.replace("<svg", f'<svg x="{x}" y="0" width="{w}" height="{h:.1f}"', 1)
+    inner = inner.replace(root, sized, 1)
+    doc = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h:.0f}" viewBox="0 0 {W} {h:.1f}" '
+           f'role="img" aria-label="3D contribution calendar"><title>3D contribution calendar</title>'
+           f'<defs><clipPath id="frame3d"><rect x="{x}" y="0" width="{w}" height="{h:.1f}" rx="24"/></clipPath></defs>'
+           f'<g clip-path="url(#frame3d)">{inner}</g>'
+           f'<rect x="{x + .5}" y=".5" width="{w - 1}" height="{h - 1:.1f}" rx="23.5" fill="none" stroke="#1e293b"/>'
+           f'</svg>')
+    ET.fromstring(doc)
+    dst.write_text(doc, encoding="utf-8", newline="\n")
+    print(f"  wrote {dst.name} ({len(doc) / 1024:.1f} KB)")
+
+
 # =================================================================================== main
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--user", default=os.environ.get("GITHUB_REPOSITORY_OWNER", "BEAST04289"))
     ap.add_argument("--out", default=str(OUT))
     ap.add_argument("--render-only", action="store_true", help="re-render from data.json without fetching")
+    ap.add_argument("--frame-3d", metavar="SVG", help="only wrap this 3D contribution SVG into contrib-3d.svg")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    if args.frame_3d:
+        frame_3d(Path(args.frame_3d), out / "contrib-3d.svg")
+        return 0
     cache_path = out / "data.json"
     data = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.exists() else {}
     data["user"] = args.user
