@@ -41,9 +41,7 @@ Second-year Computer Science undergrad at **Manipal University Jaipur**.
 <a href="https://github.com/BEAST04289/CaseVera"><img src="assets/projects/casevera.svg" width="50%" alt="CaseVera — AI investigation agent. Top 25 at TigerGraph × Hacker House Goa 2026."/></a><a href="https://github.com/BEAST04289/DugTrio"><img src="assets/projects/dugtrio.svg" width="50%" alt="DugTrio — verifiable sentiment agent. $5,000 Solana Foundation grant and $450 Superteam prize."/></a>
 </p>
 
-<details>
-<summary><b>More projects</b></summary>
-<br/>
+<p align="center"><b>More projects</b></p>
 
 | Project | What it is | Built with |
 |:--|:--|:--|
@@ -52,8 +50,6 @@ Second-year Computer Science undergrad at **Manipal University Jaipur**.
 | [**Avsarathi.ai**](https://github.com/BEAST04289/Avsarathi.ai) | WhatsApp-first scheme matching for NSFDC credit schemes · Smart India Hackathon 2026 | FastAPI · LangGraph · Gemini |
 | [**pre-dispatch-returns-risk**](https://github.com/BEAST04289/pre-dispatch-returns-risk) | Leakage-safe return-risk scoring with chronological validation | Python · FastAPI |
 | [**AI-IMAGE-GEN**](https://github.com/BEAST04289/AI-IMAGE-GEN) | Serverless AI image editor | AWS Bedrock · Lambda |
-
-</details>
 
 <p align="center"><sub>🟢 <a href="https://casevera.vercel.app"><b>CaseVera live snapshot</b></a> &nbsp;·&nbsp; <a href="https://github.com/BEAST04289?tab=repositories">all repositories →</a></sub></p>
 
