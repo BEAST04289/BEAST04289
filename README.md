@@ -110,9 +110,9 @@ Coursework: data structures & algorithms · OOP · DBMS · probability & statist
 <img src="assets/stats/activity.svg" width="100%" alt="Contribution pulse: streaks and weekly contributions over the last year"/>
 <img src="assets/stats/contrib-3d.svg" width="100%" alt="3D contribution calendar"/>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BEAST04289/BEAST04289/output/snake-aurora-dark.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BEAST04289/BEAST04289/output/snake-aurora-light.svg"/>
-  <img src="https://raw.githubusercontent.com/BEAST04289/BEAST04289/output/snake-aurora-dark.svg" width="100%" alt="A snake eating my contribution graph"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BEAST04289/BEAST04289/output/snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BEAST04289/BEAST04289/output/snake-light.svg"/>
+  <img src="https://raw.githubusercontent.com/BEAST04289/BEAST04289/output/snake-dark.svg" width="100%" alt="A snake eating my contribution graph"/>
 </picture>
 </p>
 
