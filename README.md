@@ -22,7 +22,7 @@ Second-year Computer Science undergrad at **Manipal University Jaipur**.
 </div>
 
 > [!TIP]
-> **Open to AI/ML and Software Engineering internships.** Reach me at [shaurya04289@gmail.com](mailto:shaurya04289@gmail.com) or on [LinkedIn](https://www.linkedin.com/in/shaurya--upadhyay/).
+> **Open to AI/ML, SWE and SDE roles.** Reach me at [shaurya04289@gmail.com](mailto:shaurya04289@gmail.com) or on [LinkedIn](https://www.linkedin.com/in/shaurya--upadhyay/).
 
 <br/>
 

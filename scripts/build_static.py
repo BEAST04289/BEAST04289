@@ -37,8 +37,9 @@ TYPED = [
     "top 25 · TigerGraph × Hacker House Goa 2026",
     "$5,000 Solana Foundation grantee · OWASP contributor",
 ]
-CHIPS = [("dot", "Open to AI/ML & SWE internships", GREEN),
-         ("cap", "B.Tech CSE · Manipal University Jaipur '29", MUTED)]
+# availability pill: (tag, lead-in, roles in the gradient) + a quiet education chip next to it
+STATUS = ("AVAILABLE", "Open to ", "AI/ML, SWE & SDE roles")
+EDU_CHIP = "B.Tech CSE · MUJ '29"
 
 # 4 x 3 wall; every row uses four different accents for its numbers.
 ACHIEVEMENTS = [
@@ -299,21 +300,46 @@ def build_hero() -> Svg:
           f'rx="2" fill="{TEXT}" opacity=".85"><animate attributeName="x" dur="{total:.2f}s" '
           f'repeatCount="indefinite" keyTimes="{kt}" values="{xs}"/></rect></g></g>')
 
-    # chips
-    cfs = 14.5
-    widths = [44 + text_width(t, "m5", cfs) + 18 for _, t, _ in CHIPS]
-    gapc = 16
-    x = cx - (sum(widths) + gapc * (len(CHIPS) - 1)) / 2
+    # availability pill: a light sweeps along its hairline border; the roles carry the gradient
+    tag, lead, roles = STATUS
+    fs2 = 15.5
+    tag_w = text_width(tag, "m7", 11, 2)
+    lead_w, roles_w = text_width(lead, "d5", fs2), text_width(roles, "d7", fs2)
+    pill_w = 18 + 9 + 12 + tag_w + 12 + 1 + 13 + lead_w + roles_w + 20
+    edu_w = 40 + text_width(EDU_CHIP, "m5", 14) + 18
+    gapc, py2, ph2 = 14, 352, 38
+    x = cx - (pill_w + gapc + edu_w) / 2
+    sheen = s.linear([(0, "#ffffff", 0), (.42, "#ffffff", 0), (.5, "#ffffff", .9), (.58, "#ffffff", 0), (1, "#ffffff", 0)],
+                     f"{x:.1f}", 0, f"{x + pill_w:.1f}", 0, units="userSpaceOnUse",
+                     inner=f'<animateTransform attributeName="gradientTransform" type="translate" '
+                           f'values="{-pill_w:.0f} 0;{pill_w:.0f} 0;{pill_w:.0f} 0" keyTimes="0;.6;1" '
+                           f'dur="4.5s" repeatCount="indefinite"/>')
+    gloss = s.linear([(0, "#ffffff", .07), (.6, "#ffffff", .015)], 0, 0, 0, 1)
+    mid = py2 + ph2 / 2
     s.add('<g class="rise" style="animation-delay:.7s">')
-    for (kind, label, col), cwid in zip(CHIPS, widths):
-        s.add(f'<rect x="{x:.1f}" y="356" width="{cwid:.1f}" height="34" rx="17" fill="#141414" stroke="{EDGE_HI}"/>')
-        if kind == "dot":
-            s.add(f'<circle cx="{x + 22:.1f}" cy="373" r="4.5" fill="{col}"/>'
-                  f'<circle class="ping" cx="{x + 22:.1f}" cy="373" r="4.5" fill="{col}"/>')
-        else:
-            s.add(icon(kind, x + 13, 364, 18, col, 1.7))
-        s.add(s.text(x + 38, 378, label, "m5", cfs, SOFT))
-        x += cwid + gapc
+    s.add(f'<rect x="{x:.1f}" y="{py2}" width="{pill_w:.1f}" height="{ph2}" rx="{ph2 / 2}" fill="#0e0e0e"/>'
+          f'<rect x="{x:.1f}" y="{py2}" width="{pill_w:.1f}" height="{ph2}" rx="{ph2 / 2}" fill="url(#{gloss})"/>'
+          f'<rect x="{x + .5:.1f}" y="{py2 + .5}" width="{pill_w - 1:.1f}" height="{ph2 - 1}" rx="{(ph2 - 1) / 2}" '
+          f'stroke="{EDGE_HI}"/>'
+          f'<rect x="{x + .5:.1f}" y="{py2 + .5}" width="{pill_w - 1:.1f}" height="{ph2 - 1}" rx="{(ph2 - 1) / 2}" '
+          f'stroke="url(#{sheen})" stroke-width="1.2"/>')
+    dx = x + 22
+    s.add(f'<circle cx="{dx:.1f}" cy="{mid}" r="4.5" fill="{GREEN}"/>'
+          f'<circle class="ping" cx="{dx:.1f}" cy="{mid}" r="4.5" fill="{GREEN}"/>')
+    tx2 = x + 39
+    s.add(s.text(tx2, mid + 4, tag, "m7", 11, GREEN, ls=2))
+    sx = tx2 + tag_w + 12
+    s.add(f'<line x1="{sx:.1f}" y1="{mid - 8}" x2="{sx:.1f}" y2="{mid + 8}" stroke="#3a3a3a"/>')
+    lx = sx + 14
+    s.add(s.text(lx, mid + 5.5, lead, "d5", fs2, SOFT))
+    rg = word_grad(s, lx + lead_w, lx + lead_w + roles_w)
+    s.add(s.text(lx + lead_w, mid + 5.5, roles, "d7", fs2, f"url(#{rg})"))
+    # education chip
+    ex = x + pill_w + gapc
+    s.add(f'<rect x="{ex:.1f}" y="{py2 + 2}" width="{edu_w:.1f}" height="{ph2 - 4}" rx="{(ph2 - 4) / 2}" fill="#141414" '
+          f'stroke="{EDGE_HI}"/>')
+    s.add(icon("cap", ex + 13, mid - 9, 18, MUTED, 1.7))
+    s.add(s.text(ex + 38, mid + 5, EDU_CHIP, "m5", 14, SOFT))
     s.add("</g>")
     return s
 
