@@ -182,11 +182,6 @@ def write(name: str, svg: Svg) -> None:
     print(f"  {name:<34} {len(doc) / 1024:6.1f} KB")
 
 
-def grad_text(s: Svg, accent: str, horizontal=False) -> str:
-    light, main, deep = ACCENTS[accent]
-    return s.linear([(0, light), (0.55, main), (1, deep)], 0, 0, 1 if horizontal else 0.6, 0 if horizontal else 1)
-
-
 def keyframes_common(s: Svg) -> None:
     s.css.append(
         "@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}"
@@ -485,7 +480,7 @@ def build_achievements() -> Svg:
             if mw + sw <= avail:
                 break
             msize -= 1
-        mg = grad_text(s, a["accent"])
+        mg = s.text_grad(a["accent"], x + 20, y + 120, msize, text_width(a["metric"], "d7", msize))
         s.add(s.text(x + 20, y + 120, a["metric"], "d7", msize, f"url(#{mg})"))
         if a["suffix"]:
             s.add(s.text(x + 20 + text_width(a["metric"], "d7", msize) + 9, y + 120, a["suffix"], "d5", 18, MUTED))
@@ -539,13 +534,13 @@ def build_project(p: dict, index: int) -> Svg:
     # metrics strip
     my = y0 + 202
     colw = (R - L) / 3
-    mg = grad_text(s, p["accent"])
     for k, (val, label) in enumerate(p["metrics"]):
         mx = L + k * colw
         if k:
             s.add(f'<line x1="{mx - 14:.1f}" y1="{my - 30}" x2="{mx - 14:.1f}" y2="{my + 22}" stroke="{EDGE_HI}" '
                   f'stroke-opacity=".7"/>')
         vsize = fit_size(val, "d7", 30, colw - 26, 20)
+        mg = s.text_grad(p["accent"], mx, my, vsize, text_width(val, "d7", vsize))
         s.add(f'<g class="rise" style="animation-delay:{.35 + .12 * k:.2f}s">'
               + s.text(mx, my, val, "d7", vsize, f"url(#{mg})")
               + s.text(mx + 1, my + 22, label.upper(), "m5", 12.5, DIM, ls=1) + "</g>")

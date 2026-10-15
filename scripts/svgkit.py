@@ -289,6 +289,16 @@ class Svg:
         self.defs.append(f'<linearGradient id="{gid}" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}"{u} {extra}>{st}{inner}</linearGradient>')
         return gid
 
+    def text_grad(self, accent: str, x: float, baseline: float, size: float, width: float) -> str:
+        """Diagonal accent sheen for a big number, pinned to the text's own box in user space.
+
+        objectBoundingBox gradients on <text> resolve against different boxes in WebKit vs Blink/Gecko
+        (WebKit renders them almost entirely in the lightest stop), so coordinates are explicit here.
+        """
+        light, main, deep = ACCENTS[accent]
+        return self.linear([(0, light), (.45, main), (1, deep)], f"{x:.1f}", f"{baseline - size * .78:.1f}",
+                           f"{x + max(width, size):.1f}", f"{baseline:.1f}", units="userSpaceOnUse")
+
     def radial(self, stops, cx=0.5, cy=0.5, r=0.5, units: str | None = None) -> str:
         gid = self.uid("r")
         u = f' gradientUnits="{units}"' if units else ""

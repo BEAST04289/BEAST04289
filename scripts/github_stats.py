@@ -274,8 +274,8 @@ def render_overview(data: dict, m: dict) -> Svg:
         r, c = divmod(i, 3)
         x, y = 40 + c * cw, 104 + r * (chh + 12)
         light, main, deep = ACCENTS[acc]
-        g = s.linear([(0, light), (.6, main), (1, deep)], 0, 0, .6, 1)
         vsize = fit_size(val, "d7", 32, cw - 70, 18)
+        g = s.text_grad(acc, x + 14, y + 66, vsize, text_width(val, "d7", vsize))
         s.add(f'<g class="rise" style="animation-delay:{.1 + .08 * i:.2f}s">'
               f'<rect x="{x:.1f}" y="{y}" width="{cw - 12:.1f}" height="{chh}" rx="14" fill="#0b1222" '
               f'fill-opacity=".7" stroke="{EDGE_HI}" stroke-opacity=".55"/>'
@@ -351,7 +351,9 @@ def render_activity(data: dict, m: dict) -> Svg:
     bd, bc = m["busiest"]
     _card_header(s, 40, 34, "pulse", "pink", "Contribution Pulse",
                  f"weekly contributions · last 52 weeks · busiest day {bc} on {nice_date(bd)}")
-    updated = dt.datetime.now(dt.timezone.utc).strftime("%b %d, %Y · %H:%M UTC")
+    stamp = data.get("updated")  # when the numbers were fetched, not when the card was drawn
+    when = dt.datetime.fromisoformat(stamp) if stamp else dt.datetime.now(dt.timezone.utc)
+    updated = when.astimezone(dt.timezone.utc).strftime("%b %d, %Y · %H:%M UTC")
     s.add(s.text(1160, 55, f"updated {updated}", "m5", 12, DIM, anchor="end"))
     s.add(f'<circle cx="{1160 - text_width("updated " + updated, "m5", 12) - 12:.1f}" cy="51" r="4" fill="{GREEN}"/>'
           f'<circle class="ping" cx="{1160 - text_width("updated " + updated, "m5", 12) - 12:.1f}" cy="51" r="4" '
@@ -368,8 +370,8 @@ def render_activity(data: dict, m: dict) -> Svg:
     for i, (ic, acc, val, label, sub) in enumerate(kpis):
         light, main, deep = ACCENTS[acc]
         y = 104 + i * 76
-        g = s.linear([(0, light), (.6, main), (1, deep)], 0, 0, .6, 1)
         vw = text_width(val, "d7", 34)
+        g = s.text_grad(acc, 90, y + 44, 34, vw)
         s.add(f'<g class="rise" style="animation-delay:{.1 + .1 * i:.2f}s">'
               f'<rect x="40" y="{y}" width="300" height="64" rx="14" fill="#0b1222" fill-opacity=".7" '
               f'stroke="{EDGE_HI}" stroke-opacity=".55"/>'
@@ -499,7 +501,8 @@ def main() -> int:
     if not data.get("calendar"):
         print("::error::no contribution data yet, nothing to render")
         return 0
-    data["updated"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    if fresh:
+        data["updated"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
     m = derive(data)
     cards = {"overview.svg": render_overview(data, m), "languages.svg": render_languages(data),
@@ -508,7 +511,7 @@ def main() -> int:
         doc = svg.render()
         (out / name).write_text(doc, encoding="utf-8", newline="\n")
         print(f"  wrote {name} ({len(doc) / 1024:.1f} KB)")
-    if fresh or args.render_only:
+    if fresh:
         cache_path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     return 0
 
