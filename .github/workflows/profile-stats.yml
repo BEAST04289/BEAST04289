@@ -46,7 +46,7 @@ jobs:
 
       - name: Frame the 3D calendar like the other cards
         continue-on-error: true
-        run: python3 scripts/github_stats.py --frame-3d profile-3d-contrib/profile-aurora.svg
+        run: python3 scripts/github_stats.py --frame-3d profile-3d-contrib/profile-graphite.svg
 
       - name: Commit refreshed cards
         run: |

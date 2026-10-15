@@ -19,15 +19,16 @@ from collections import defaultdict
 from xml.sax.saxutils import escape as _xml_escape
 
 # --------------------------------------------------------------------------- palette
-INK = "#05080f"
-PANEL_A = "#0f172a"
-PANEL_B = "#090e1b"
-EDGE = "#1e293b"
-EDGE_HI = "#334155"
-TEXT = "#e2e8f0"
-SOFT = "#cbd5e1"
-MUTED = "#94a3b8"
-DIM = "#64748b"
+# Surfaces are neutral black/grey; colour is reserved for words and numbers.
+INK = "#0a0a0a"
+PANEL_A = "#171717"
+PANEL_B = "#0e0e0e"
+EDGE = "#262626"
+EDGE_HI = "#333333"
+TEXT = "#ededed"
+SOFT = "#d4d4d4"
+MUTED = "#a3a3a3"
+DIM = "#737373"
 CYAN = "#22d3ee"
 SKY = "#38bdf8"
 VIOLET = "#a78bfa"
@@ -320,12 +321,14 @@ class Svg:
         return cid
 
     def panel(self, x, y, w, h, rx=18, accent: str | None = None, glow_at=(0.0, 0.0), glow_op=0.16) -> str:
-        """Dark card: diagonal fill, hairline border, optional accent glow from a corner."""
+        """Neutral card: graphite fill, faint white sheen from a corner, hairline border.
+
+        `accent` is accepted for call-site compatibility but no longer tints the surface.
+        """
         fill = self.linear([(0, PANEL_A), (1, PANEL_B)], 0, 0, 1, 1)
         out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="url(#{fill})"/>']
-        if accent:
-            g = self.radial([(0, accent, glow_op), (1, accent, 0)], cx=glow_at[0], cy=glow_at[1], r=0.9)
-            out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="url(#{g})"/>')
+        sheen = self.radial([(0, "#ffffff", 0.045), (1, "#ffffff", 0)], cx=glow_at[0], cy=glow_at[1], r=0.85)
+        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="url(#{sheen})"/>')
         out.append(f'<rect x="{x + .5}" y="{y + .5}" width="{w - 1}" height="{h - 1}" rx="{rx - .5}" '
                    f'fill="none" stroke="{EDGE}" stroke-opacity=".9"/>')
         return "".join(out)

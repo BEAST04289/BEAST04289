@@ -239,10 +239,8 @@ def _anim_css(s: Svg) -> None:
 
 
 def _card_header(s: Svg, x: float, y: float, ic: str, accent: str, title: str, sub: str) -> None:
-    light, main, _ = ACCENTS[accent]
-    s.add(f'<rect x="{x}" y="{y}" width="44" height="44" rx="12" fill="{main}" fill-opacity=".1" '
-          f'stroke="{main}" stroke-opacity=".5"/>')
-    s.add(icon(ic, x + 11, y + 11, 22, light, 1.8))
+    s.add(f'<rect x="{x}" y="{y}" width="44" height="44" rx="12" fill="#1b1b1b" stroke="#2e2e2e"/>')
+    s.add(icon(ic, x + 11, y + 11, 22, SOFT, 1.8))
     s.add(s.text(x + 58, y + 21, title, "d7", 21, TEXT))
     s.add(s.text(x + 58, y + 40, sub, "m5", 12.5, DIM))
 
@@ -265,7 +263,6 @@ def render_overview(data: dict, m: dict) -> Svg:
                                                for _, _, v, k, u in tiles))
     _anim_css(s)
     s.add(s.panel(10, 10, 580, 320, rx=20, accent=CYAN, glow_at=(0, 0), glow_op=.16))
-    s.add(f'<rect x="40" y="10" width="64" height="3" rx="1.5" fill="{CYAN}"/>')
     since = prof.get("created_at", "")[:7]
     since_txt = dt.date.fromisoformat(since + "-01").strftime("%b %Y") if since else ""
     _card_header(s, 40, 34, "chart", "cyan", "GitHub Overview", f"@{data['user']} · on GitHub since {since_txt}")
@@ -277,9 +274,9 @@ def render_overview(data: dict, m: dict) -> Svg:
         vsize = fit_size(val, "d7", 32, cw - 70, 18)
         g = s.text_grad(acc, x + 14, y + 66, vsize, text_width(val, "d7", vsize))
         s.add(f'<g class="rise" style="animation-delay:{.1 + .08 * i:.2f}s">'
-              f'<rect x="{x:.1f}" y="{y}" width="{cw - 12:.1f}" height="{chh}" rx="14" fill="#0b1222" '
-              f'fill-opacity=".7" stroke="{EDGE_HI}" stroke-opacity=".55"/>'
-              + icon(ic, x + 14, y + 14, 18, light, 1.7)
+              f'<rect x="{x:.1f}" y="{y}" width="{cw - 12:.1f}" height="{chh}" rx="14" fill="#141414" '
+              f'stroke="#262626"/>'
+              + icon(ic, x + 14, y + 14, 18, MUTED, 1.7)
               + s.text(x + 39, y + 28, label.upper(), "m5", fit_size(label.upper(), "m5", 12, cw - 60, 9), MUTED,
                        ls=.4)
               + s.text(x + 14, y + 66, val, "d7", vsize, f"url(#{g})")
@@ -303,13 +300,12 @@ def render_languages(data: dict) -> Svg:
     s = Svg(W, H, "Top languages", "; ".join(f"{k} {v:.1f}%" for k, v in top))
     _anim_css(s)
     s.add(s.panel(10, 10, 580, 320, rx=20, accent=VIOLET, glow_at=(1, 0), glow_op=.16))
-    s.add(f'<rect x="40" y="10" width="64" height="3" rx="1.5" fill="{VIOLET}"/>')
     _card_header(s, 40, 34, "code", "violet", "Top Languages",
                  f"share of {repos} repos · each repo weighted equally")
     # stacked bar
     bx, by, bw, bh = 40, 104, 520, 14
     clip = s.clip_rect(bx, by, bw, bh, 7)
-    s.add(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="7" fill="#1e293b"/>')
+    s.add(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="7" fill="#262626"/>')
     s.add(f'<g clip-path="url(#{clip})">')
     x = bx
     total = sum(v for _, v in top) or 1
@@ -331,7 +327,7 @@ def render_languages(data: dict) -> Svg:
               f'<circle cx="{lx + 6}" cy="{ly - 6}" r="5" fill="{col}"/>'
               + s.text(lx + 20, ly, name, "d5", fit_size(name, "d5", 17, colw - 90, 12), TEXT)
               + s.text(lx + colw, ly, pct, "m5", 15, SOFT, anchor="end")
-              + f'<rect x="{lx}" y="{ly + 12}" width="{colw}" height="5" rx="2.5" fill="#1e293b"/>'
+              + f'<rect x="{lx}" y="{ly + 12}" width="{colw}" height="5" rx="2.5" fill="#262626"/>'
               + f'<rect class="grow" x="{lx}" y="{ly + 12}" width="{max(colw * v / 100, 5):.1f}" height="5" rx="2.5" '
                 f'fill="{col}" style="animation-delay:{.45 + .1 * i:.2f}s"/>'
               + "</g>")
@@ -347,7 +343,6 @@ def render_activity(data: dict, m: dict) -> Svg:
             f"{m['total_all']} contributions since {nice_date(m['since'])}.")
     _anim_css(s)
     s.add(s.panel(10, 10, 1180, 340, rx=24, accent=PINK, glow_at=(1, 1), glow_op=.12))
-    s.add(f'<rect x="40" y="10" width="64" height="3" rx="1.5" fill="{PINK}"/>')
     bd, bc = m["busiest"]
     _card_header(s, 40, 34, "pulse", "pink", "Contribution Pulse",
                  f"weekly contributions · last 52 weeks · busiest day {bc} on {nice_date(bd)}")
@@ -373,9 +368,8 @@ def render_activity(data: dict, m: dict) -> Svg:
         vw = text_width(val, "d7", 34)
         g = s.text_grad(acc, 90, y + 44, 34, vw)
         s.add(f'<g class="rise" style="animation-delay:{.1 + .1 * i:.2f}s">'
-              f'<rect x="40" y="{y}" width="300" height="64" rx="14" fill="#0b1222" fill-opacity=".7" '
-              f'stroke="{EDGE_HI}" stroke-opacity=".55"/>'
-              + icon(ic, 54, y + 21, 22, light, 1.8)
+              f'<rect x="40" y="{y}" width="300" height="64" rx="14" fill="#141414" stroke="#262626"/>'
+              + icon(ic, 54, y + 21, 22, MUTED, 1.8)
               + s.text(90, y + 44, val, "d7", 34, f"url(#{g})")
               + s.text(90 + vw + 10, y + 30, label, "d5", 15, SOFT)
               + s.text(90 + vw + 10, y + 49, sub, "m5", fit_size(sub, "m5", 12, 240 - vw - 10, 9), DIM)
@@ -388,7 +382,7 @@ def render_activity(data: dict, m: dict) -> Svg:
     top = _nice_ceiling(vmax)
     for k in range(4):  # gridlines
         gy = cy0 + ch - ch * k / 3
-        s.add(f'<line x1="{cx0}" y1="{gy:.1f}" x2="{cx0 + cw}" y2="{gy:.1f}" stroke="#1e293b" '
+        s.add(f'<line x1="{cx0}" y1="{gy:.1f}" x2="{cx0 + cw}" y2="{gy:.1f}" stroke="#262626" '
               f'stroke-dasharray="{"0" if k == 0 else "3 6"}"/>')
         s.add(s.text(cx0 - 10, gy + 4, fmt(round(top * k / 3)), "m5", 11, DIM, anchor="end"))
     n = len(weeks)
@@ -397,7 +391,7 @@ def render_activity(data: dict, m: dict) -> Svg:
         line = _smooth(pts, cy0 + ch)
         area = line + f"L{pts[-1][0]:.1f} {cy0 + ch}L{pts[0][0]:.1f} {cy0 + ch}Z"
         stroke = s.linear([(0, CYAN), (.5, VIOLET), (1, PINK)], cx0, 0, cx0 + cw, 0, units="userSpaceOnUse")
-        fill = s.linear([(0, VIOLET, .38), (1, VIOLET, 0)], 0, cy0, 0, cy0 + ch, units="userSpaceOnUse")
+        fill = s.linear([(0, "#ffffff", .12), (1, "#ffffff", 0)], 0, cy0, 0, cy0 + ch, units="userSpaceOnUse")
         glow = s.glow_filter(4)
         s.add(f'<path d="{area}" fill="url(#{fill})" class="fade" style="animation-delay:.9s"/>')
         s.add(f'<path d="{line}" stroke="url(#{stroke})" stroke-width="2.6" stroke-linecap="round" '
@@ -463,7 +457,7 @@ def frame_3d(src: Path, dst: Path) -> None:
            f'role="img" aria-label="3D contribution calendar"><title>3D contribution calendar</title>'
            f'<defs><clipPath id="frame3d"><rect x="{x}" y="0" width="{w}" height="{h:.1f}" rx="24"/></clipPath></defs>'
            f'<g clip-path="url(#frame3d)">{inner}</g>'
-           f'<rect x="{x + .5}" y=".5" width="{w - 1}" height="{h - 1:.1f}" rx="23.5" fill="none" stroke="#1e293b"/>'
+           f'<rect x="{x + .5}" y=".5" width="{w - 1}" height="{h - 1:.1f}" rx="23.5" fill="none" stroke="#262626"/>'
            f'</svg>')
     ET.fromstring(doc)
     dst.write_text(doc, encoding="utf-8", newline="\n")

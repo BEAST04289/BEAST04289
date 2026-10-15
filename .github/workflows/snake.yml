@@ -19,10 +19,10 @@ jobs:
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          # snake-aurora-* match the profile palette (cyan dots, violet snake); the classic pair is kept too
+          # snake-dark/light match the profile: greyscale grid, one violet accent; the classic pair is kept too
           outputs: |
-            dist/snake-aurora-dark.svg?palette=github-dark&color_snake=#a78bfa&color_dots=#161b22,#0e4a5c,#0e7490,#22d3ee,#a5f3fc
-            dist/snake-aurora-light.svg?palette=github-light&color_snake=#7c3aed&color_dots=#ebedf0,#a5f3fc,#22d3ee,#0891b2,#155e75
+            dist/snake-dark.svg?palette=github-dark&color_snake=#a78bfa&color_dots=#161616,#2e2e2e,#525252,#8a8a8a,#d4d4d4
+            dist/snake-light.svg?palette=github-light&color_snake=#7c3aed&color_dots=#ebedf0,#d4d4d4,#a3a3a3,#737373,#404040
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
