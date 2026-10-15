@@ -16,20 +16,23 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Generate the snake SVGs
-        uses: Platane/snk@v3
-        id: snake-gif
+        uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: BEAST04289
+          github_user_name: ${{ github.repository_owner }}
+          # snake-aurora-* match the profile palette (cyan dots, violet snake); the classic pair is kept too
           outputs: |
+            dist/snake-aurora-dark.svg?palette=github-dark&color_snake=#a78bfa&color_dots=#161b22,#0e4a5c,#0e7490,#22d3ee,#a5f3fc
+            dist/snake-aurora-light.svg?palette=github-light&color_snake=#7c3aed&color_dots=#ebedf0,#a5f3fc,#22d3ee,#0891b2,#155e75
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
-          # THE FIX: v3 switched from scraping the contributions page to the GitHub API,
-          # and needs this token on THIS step specifically — not just on the push step below.
+          # v3 reads the contribution calendar through the GitHub API and needs the token on this step.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Publishes the *contents* of dist/ to the root of the `output` branch,
+      # so README URLs are .../output/<file>.svg (no dist/ prefix).
       - name: Push snake SVGs to the output branch
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output
           build_dir: dist

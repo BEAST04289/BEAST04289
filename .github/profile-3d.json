@@ -1,0 +1,13 @@
+[
+  {
+    "type": "normal",
+    "fileName": "profile-aurora.svg",
+    "backgroundColor": "#0d1117",
+    "foregroundColor": "#e2e8f0",
+    "strongColor": "#f472b6",
+    "weakColor": "#64748b",
+    "radarColor": "#a78bfa",
+    "growingAnimation": true,
+    "contribColors": ["#161b22", "#0e4a5c", "#0e7490", "#22d3ee", "#a5f3fc"]
+  }
+]
